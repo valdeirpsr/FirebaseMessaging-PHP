@@ -123,8 +123,8 @@ When a message is sent with high priority, it is sent immediately and the applic
 $messaging->setPriority(FirebaseMessaging::PRIORITY_HIGH);
 ```
 
-### Defina um atraso para dispositivos ociosos.
-When this parameter is set to true, the message must not be sent to the device is active.
+### Set a delay for idle devices.
+When this parameter is set to true, the message must not be sent to the device is inactive.
 
 Default: false
 ```php
@@ -147,7 +147,7 @@ $messaging->setData([
 ]);
 ```
 
-## Configurando Sua Notificação
+## Configuring Your Notification
 
 ### Set the title of the notification
 Indicates the title of the notification. This field is not visible in mobile phones and iOS tablets, only the iWatch.
