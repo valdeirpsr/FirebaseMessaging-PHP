@@ -474,9 +474,6 @@ class FirebaseMessaging
      * @throws Exception\UnauthorizedException If you have informed an invalid key.
      * @throws \UnexpectedValueException
      * 
-     * @todo Verificar se self::to, self::registrationIds ou self::condition estão nulos
-     * e então lancar uma exception caso estejam
-     * 
      * @return FirebaseResponseHttp
      */
     public function send()
