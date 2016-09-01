@@ -4,3 +4,4 @@ index.php
 .buildpath
 .project
 .settings/
+/composer.lock

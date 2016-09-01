@@ -378,6 +378,8 @@ class FirebaseNotification
         $result = [];
         
         foreach ($params as $key => $value) {
+            $key = strtolower(preg_replace("/([A-Z])/", "_$1", $key));
+            
             if (!is_null($value)) {
                 $result[$key] = $value;
             }

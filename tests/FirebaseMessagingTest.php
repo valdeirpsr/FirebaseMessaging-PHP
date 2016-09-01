@@ -213,6 +213,26 @@ class FirebaseMessagingTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($notification, $firebase->getNotification());
     }
     
+    public function testSendMessageWithoutRecipientsInvalid()
+    {
+        $this->expectException('UnexpectedValueException');
+        $this->expectExceptionMessage('Invalid recipient.');
+        
+        $notification = new FirebaseNotification();
+        $notification->setTitle("My Title");
+        $notification->setBody("My Message");
+        $notification->setIcon("myicon");
+        $notification->setTag("valdeirpsr_1");
+        
+        $messaging = new FirebaseMessaging(self::SERVER_KEY_VALID);
+        $messaging->setPriority(FirebaseMessaging::PRIORITY_HIGH);
+        $messaging->setTimeToLive(2419200);
+        $messaging->setOperacionalSystem(FirebaseMessaging::OS_ANDROID);
+        $messaging->setNotification($notification);
+        $messaging->setDevelopmentMode(true);
+        $response = $messaging->send();
+    }
+    
     public function testSendMessageWithoutAuthorization()
     {
         $this->expectException("FirebaseMessaging\Exception\UnauthorizedException");
